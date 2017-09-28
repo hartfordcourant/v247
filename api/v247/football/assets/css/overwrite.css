@@ -1,0 +1,60 @@
+.score_card table tbody td.team {
+	max-width: 185px!important;
+	padding-left: 5px;
+	text-align: left;
+	overflow: hidden
+}
+.score_card table tbody td.qtr {
+	width: 28px;
+	border-left: 1px solid #ccc;
+	text-align: center
+}
+.score_card table tbody td.qtr.total {
+	font-weight: 700
+}
+.central_connecticut.standings {
+	display: block
+}
+.standings table.results .team_name {
+	width: 60%;
+	overflow: hidden
+}
+.standings table.results th.team_name.division {
+	color: #428bca;
+	text-transform: uppercase;
+	font-size: 14px
+}
+.standings table.results .stand {
+	width: 20%
+}
+.standings table.results td.dpf, .standings table.results td.dwl, .standings table.results td.lpf, .standings table.results td.opf, .standings table.results th.dpf, .standings table.results th.dwl, .standings table.results th.lpf, .standings table.results th.opf {
+	display: none
+}
+@media only screen and (min-width:768px) {
+	.standings table.results .team_name {
+		width: 55%
+	}
+	.standings table.results .stand {
+		width: 15%
+	}
+	.standings table.results td.dwl, .standings table.results th.dwl {
+		display: table-cell
+	}
+}
+@media only screen and (min-width:992px) {
+	.score_card table tbody td.team {
+		width: 52%
+	}
+	.score_card table tbody td.qtr {
+		width: 8%
+	}
+	.standings table.results .team_name {
+		width: 34%
+	}
+	.standings table.results .stand {
+		width: 11%
+	}
+	.standings table.results td.dpf, .standings table.results td.dwl, .standings table.results td.lpf, .standings table.results td.opf, .standings table.results th.dpf, .standings table.results th.dwl, .standings table.results th.lpf, .standings table.results th.opf {
+		display: table-cell
+	}
+}

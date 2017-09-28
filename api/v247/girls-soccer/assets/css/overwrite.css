@@ -1,0 +1,80 @@
+.score_card table tbody td.team, .score_card table thead th.team {
+	width: 45%;
+	padding-left: 5px;
+	text-align: left;
+	overflow: hidden
+}
+.score_card table tbody td.inn, .score_card table thead th.inn {
+	width: 5%;
+	border-left: 1px solid #ccc;
+	text-align: center
+}
+.score_card table thead th.inn, .score_card table thead th.team {
+	border-left: none;
+	text-align: center
+}
+.score_card table tbody td.inn.total {
+	font-weight: 700
+}
+.score_card table tbody td.inn span.pks {
+	font-size: 11px
+}
+.central_connecticut.standings {
+	display: block
+}
+.standings table.results .team_name {
+	width: 60%;
+	overflow: hidden
+}
+.standings table.results .stand, .standings table.results td.stand.owl, .standings table.results th.stand.owl {
+	width: 30%
+}
+.standings table.results th.team_name.division {
+	color: #428bca;
+	text-transform: uppercase;
+	font-size: .9em
+}
+.standings table.results td.stand.dpf, .standings table.results td.stand.dwl, .standings table.results td.stand.lpf, .standings table.results td.stand.lwl, .standings table.results td.stand.opf, .standings table.results th.stand.dpf, .standings table.results th.stand.dwl, .standings table.results th.stand.lpf, .standings table.results th.stand.lwl, .standings table.results th.stand.opf {
+	display: none
+}
+.standings table.results td.stand.points, .standings table.results th.stand.points {
+	width: 10%
+}
+@media only screen and (min-width:480px) {
+	.standings table.results .team_name {
+		width: 40%
+	}
+	.standings table.results td.stand.lwl, .standings table.results th.stand.lwl {
+		display: table-cell;
+		width: 25%
+	}
+	.standings table.results td.stand.owl, .standings table.results th.stand.owl {
+		width: 25%
+	}
+}
+@media only screen and (min-width:768px) {
+	.standings table.results .team_name {
+		width: 40%
+	}
+	.standings table.results td.stand.lwl, .standings table.results td.stand.owl, .standings table.results th.stand.lwl, .standings table.results th.stand.owl {
+		width: 15%
+	}
+	.standings table.results td.stand.lpf, .standings table.results td.stand.opf, .standings table.results th.stand.lpf, .standings table.results th.stand.opf {
+		display: table-cell;
+		width: 10%
+	}
+}
+@media only screen and (min-width:992px) {
+	.score_card table tbody td.team, .score_card table thead th.team {
+		width: 45%
+	}
+	.score_card table tbody td.inn, .score_card table thead th.inn {
+		width: 5%
+	}
+	.standings table.results .team_name {
+		width: 42%
+	}
+	.standings table.results td.stand.lpf, .standings table.results td.stand.lwl, .standings table.results td.stand.opf, .standings table.results td.stand.owl, .standings table.results th.stand.lpf, .standings table.results th.stand.lwl, .standings table.results th.stand.opf, .standings table.results th.stand.owl {
+		width: 12%
+	}
+}

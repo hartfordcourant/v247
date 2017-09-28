@@ -1,0 +1,57 @@
+/**********************************/
+/* Global Styles                  */
+/**********************************/
+
+body {
+  background: rgba(255,255,255,.5) url(../img/girls-soccer.jpg) no-repeat top center fixed;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+}
+
+/**********************************/
+/* Admin Score Input Styles       */
+/**********************************/
+
+.score_input table td, .game_input table td{
+  padding:0 5px 5px 0;
+}
+.score_input table .winner{
+  width:5%;
+  text-align:left;
+}
+.score_input table td.abbr{
+  text-align:center;
+  padding:0 10px 5px 0;
+  width:9%;
+}
+.score_input table .team_name{
+  width:44%;
+  text-align:left;
+}
+.score_input table .qtr,.score_input table .final{
+  width:9%;
+}
+.score_input table input, .game_input table input{
+  padding:6px 6px;
+}
+
+/* game info and button styles */
+
+.game_input table .date, 
+.game_input table .time, 
+.game_input table .update, 
+.game_input table .delete{
+  width:40%;
+}
+.game_input table .location{
+  width:80%;
+}
+
+/* update button */
+
+.update_button button{
+  width:calc( 100% - 5px );
+  height:40px;
+}

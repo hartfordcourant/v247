@@ -1,0 +1,95 @@
+<?php
+if(basename($_SERVER['PHP_SELF']) == 'teams.php'){
+    $action = 'teams.php';
+    $overline = str_replace("High School", "", V247_SPORT) . " / School: " . $school_name;
+}else{
+    $action = 'admin.php';
+    $overline = str_replace("High School", "", V247_SPORT) . " / Date: " . date('D, M d', strtotime($day)) . " / League: " . $league;
+}
+?>
+
+<div class="mod_bg border-all dropshadow">
+	<div class="row">
+			<!-- left cell -->
+			<div id="admin_nav_wrapper" class="col-sm-7 col-md-7 col-lg-8">
+				<span class='overline'><?php echo $overline; ?></span>
+
+				<!-- TEAM FORM START -->
+				<?php if ($action == 'teams.php'): ?>
+				
+				<form role="form" name="team_schedule_form" id="schedule_form" class="form-inline" method="get" action="<?php echo $action; ?>">
+
+					<!-- Sort by team-->
+					<div class="form-group">
+				    	<select name="school" id="school" class="form-control">
+				    		<option value=''>Select School</option>
+				    		<?php 
+								foreach($navSchools as $school){
+									echo "<option value={$school['school_id']}>{$school['name']}</option>";
+								}
+							?>
+				    	</select>
+				  	</div>
+
+				  	<button type="submit" name="team_schedule" class="btn btn-primary">Search</button>
+				</form>
+				<!-- TEAM FORM END -->
+
+				<?php elseif ($action == 'admin.php'): ?>
+				
+				<!-- ADMIN FORM START -->
+				<form role="form" name="admin_schedule_form" id="schedule_form" class="form-inline" method="get" action="<?php echo $action; ?>">
+					<!-- Sort by date-->
+					<div class="form-group">
+				    	<select name="day" id="day" class="form-control">
+				    		<option value=''>Select Day</option>
+				    		<?php 
+				    			$today = date("Y-m-d");
+				    			$selected = '';
+								foreach($days as $day){
+									($today == $day['game_date']) ? $selected = 'selected' : $selected = ''; 
+									echo "<option value={$day['game_date']} {$selected}>" . date('D, M d', strtotime($day['game_date'])) . "</option>";
+								}
+							?>
+				    	</select>
+				  	</div>
+					<!-- Sort by conference-->
+					<div class="form-group">
+				    	<select name="league" id="league" class="form-control">
+				    		<option value=''>Select League</option>
+				    		<?php 
+				    			$nick = '';
+								foreach($leagues as $result){
+									($result['league_nick'] == 'cral') ? $nick = rtrim($result['league_nick'],'l') : $nick = $result['league_nick'];
+									echo "<option value={$nick}>{$result['league_name']}</option>";
+								}
+							?>
+				    	</select>
+				  	</div>
+
+				  	<button type="submit" name="admin_schedule" class="btn btn-primary">Search</button>	
+				</form>
+
+				<!-- ADMIN FORM END -->
+				<?php endif; ?>
+			
+			</div>
+			<!-- end left cell -->
+			<!-- right cell -->
+			<div id="admin_cci_docs" class="col-sm-5 col-md-5 col-lg-4">
+				<span class='overline'>&nbsp;</span>
+				<form role="form" name="add_game_nav_form" id="add_game_nav_form" class="form-inline" method="post" action="admin.php">
+					<div class="btn-group">
+						<?php if($addUp == 'add'){ ?>
+							<button class="btn btn-primary form-control" name="add">Add New Game</button>
+							<button class="btn btn-default form-control" name="up">Update Game</button>
+						<?php }else{ ?>
+							<button class="btn btn-default form-control" name="add">Add New Game</button>
+							<button class="btn btn-primary form-control" name="up">Update Game</button>
+						<?php } ?>
+					</div>
+				</form>
+			</div>
+			<!-- end right cell -->
+	</div>
+</div>

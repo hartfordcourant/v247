@@ -1,0 +1,21 @@
+<?php
+// get all schools
+$getAllSchools = "SELECT school_id, name, (SELECT league_name FROM leagues WHERE league_id = league), division, class FROM schools WHERE league != 0 ORDER BY league, division";
+$allSchools = $db->getData($getAllSchools);
+// get all schools
+$getNavSchools = "SELECT school_id, name FROM schools ORDER BY name";
+$navSchools = $db->getData($getNavSchools);
+// get all schools for just updating teams
+$getUpdateSchools = "SELECT school_id, name FROM schools ORDER BY name";
+$updateSchools = $db->getData($getUpdateSchools);
+// get all area schools
+$getAreaSchools = "SELECT school_id, name FROM schools WHERE area = 1";
+$areaSchools = $db->getData($getAreaSchools);
+// get all league names
+$getLeagues = "SELECT league_id, league_name, league_nick FROM leagues";
+$leagues = $db->getData($getLeagues);
+// get all days of games
+//$getDays = "SELECT DISTINCT game_date FROM schedule WHERE game_date <> '0000-00-00'";
+$getDays = "SELECT DISTINCT game_date FROM schedule";
+$days = $db->getData($getDays);
+?>
